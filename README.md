@@ -1,5 +1,6 @@
 # CS3398-Fire-S2017
 
+<<<<<<< HEAD
 Testing a new commit for Slack Integration.
 Testing again?
 
@@ -11,3 +12,5 @@ The FINAL? test.
 
 Steven edits this readme with enthusiasm ... or something like that.
 >>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> refs/remotes/origin/Develop
