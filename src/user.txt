@@ -1,0 +1,36 @@
+public class user
+{
+	//Variables
+	string gender;
+	int age;
+	double weight;
+
+	//Setter Functions
+	//currently unsure how we will take input from user	
+	void setGender (string gender)
+	{
+		
+	}
+	void setAge (int age)
+	{
+		
+	}
+	void setWeight (double weight)
+	{
+
+	}
+
+	//Getter Functions
+	string getGender ()
+	{
+		return gender;
+	}
+	int getAge ()
+	{
+		return age;
+	}
+	int getWeight ()
+	{
+		return weight;
+	}
+}
