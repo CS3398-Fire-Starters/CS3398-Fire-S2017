@@ -6,6 +6,7 @@ public class user
     int age;
     double weight;
     int inches;
+    float BMI;
 
     //Setter Functions
     void setGender (string new_gender)
@@ -19,10 +20,12 @@ public class user
     void setWeight (double new_weight)
     {
         weight = new_weight;
+        BMICalc(weight, inches);
     }
     void setInches (int new_inches)
     {
         inches = new_inches;
+        BMICalc(weight, inches);
     }
 
     //Getter Functions
@@ -38,12 +41,15 @@ public class user
     {
         return weight;
     }
-
-    //other functions
-    float BMICalc(int weight, int inches)
+    float getBMI ()
     {
-        float BMI = (703 * (weight/(inches*inches)));	//703(USA) *weight/Inches^2
         return BMI;
+    }    
+    
+    //other functions
+    void BMICalc(int weight, int inches)
+    {
+        BMI = (703 * (weight/(inches*inches)));	//703(USA) *weight/Inches^2
     }
     //constructor
     public user(string first_gender, int first_age, double first_weight, int first_inches)
@@ -52,5 +58,6 @@ public class user
         age = first_age;
         weight = first weight;
         inches = first_inches;
+        BMICalc(weight, inches);
     }
 }
