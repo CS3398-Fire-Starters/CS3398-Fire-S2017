@@ -16,28 +16,14 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug{
-            debuggable true
-        }
     }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.1.1'
-    compile 'com.android.support:design:25.1.1'
     testCompile 'junit:junit:4.12'
-    compile project(':smartloginlibrary-v0.5beta')
-    //Support libraries
-    compile 'com.android.support:appcompat-v7:23.0.1'
-    compile 'com.android.support:design:23.0.1'
-    //Facebook SDK
-    compile 'com.facebook.android:facebook-android-sdk:4.0.1'
-    //Google Play Services
-    compile 'com.google.android.gms:play-services:8.1.0'
-    //GSON library
-    compile 'com.google.code.gson:gson:2.3.1'
 }
