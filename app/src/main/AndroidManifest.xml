@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.txstate.FitApp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:debuggable="true"
+        android:theme="@style/AppTheme">
+        android:debuggable="true"
+        <activity
+            android:name=".MainActivity"
+            android:label="FitnessAppPrototype"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DisplayMessageActivity"></activity>
+
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <!-- Required for Google Login -->
+        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+        <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+        <!-- In application tag (Need to register the Login activity in your app) -->
+        <activity
+            android:name="studios.codelight.smartloginlibrary.SmartLoginActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+
+
+    </application>
+
+</manifest>
