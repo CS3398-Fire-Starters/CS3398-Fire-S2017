@@ -30,6 +30,7 @@ public class SmartLogin extends Activity
             .isGoogleLoginEnabled(true)
             .build();
 
+    int startActivityForResult(intent, SmartLoginConfig.LOGIN_REQUEST);
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
