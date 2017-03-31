@@ -20,30 +20,24 @@ import studios.codelight.smartloginlibrary.users.SmartUser;
 public class SmartLogin extends AppCompatActivity
 {
     //This is supposed to build the LoginPage for the user.
-    //startActivity however is broken.
-    Context context;
-    ArrayList<String> PERMISSIONS = new ArrayList<>();
-
-    SmartLoginBuilder loginBuilder = new SmartLoginBuilder();
-    Intent intent = loginBuilder.with(context)//(this)?
-            .setAppLogo(1)//APP_LOGO true
-            .isFacebookLoginEnabled(true).withFacebookAppId("APP_ID")//Need FB App_id
-            .withFacebookPermissions(PERMISSIONS)
-            .isGoogleLoginEnabled(true)
-            .build();
-    //startActivityForResult(intent, SmartLoginConfig.LOGIN_REQUEST);
-    //This is disallowing compilation. Unknown how to fix.
-
-    //I dont know if onClick or onCreate is actually needed...
-    public void onClick(View v){
-        //Intent intent = loginBuilder.with(context)//(this)?
-        startActivityForResult(intent, SmartLoginConfig.LOGIN_REQUEST);
-    }
-
+    //I don't understand what Context is
+    //This is crashing the app. Unknown how to fix.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Context context = SmartLogin.this;//CONTEXT IS WHAT?
+        ArrayList<String> PERMISSIONS = new ArrayList<>();
+
+        SmartLoginBuilder loginBuilder = new SmartLoginBuilder();
+        Intent intent = loginBuilder.with(context)//(this)?
+                .setAppLogo(1)//APP_LOGO true
+                .isFacebookLoginEnabled(true).withFacebookAppId("APP_ID")//Need FB App_id
+                .withFacebookPermissions(PERMISSIONS)
+                .isGoogleLoginEnabled(true)
+                .build();
+        startActivityForResult(intent, SmartLoginConfig.LOGIN_REQUEST);
+
         super.onCreate(savedInstanceState);
-        setContentView(studios.codelight.smartloginlibrary.R.layout.activity_smart_login);
+        setContentView(R.layout.activity_smart_login);
     }
 
     @Override
