@@ -187,13 +187,14 @@
         </LinearLayout>
 
         <ListView
+            android:id="@+id/listView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:cacheColorHint="#ffffff"
+            android:clickable="true"
             android:divider="#000000"
             android:dividerHeight="2px"
-            android:labelFor="@+id/bottomSection"
-            android:clickable="true"
-            android:id="@+id/listView" />
+            android:labelFor="@+id/bottomSection" />
 
     </LinearLayout>
 </LinearLayout>
