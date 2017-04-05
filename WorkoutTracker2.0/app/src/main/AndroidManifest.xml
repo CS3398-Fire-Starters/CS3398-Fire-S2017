@@ -2,39 +2,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.derek.workouttracker20">
 
-<application android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/AppTheme">
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Homescreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-    <activity android:name=".Homescreen">
-
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             android:name="com.example.derek.workouttracker20.NewWorkout">
-        <activity
-            android:name="com.facebook.FacebookActivity"
-            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:label="@string/app_name" />
-        <activity
-            android:name="studios.codelight.smartloginlibrary.SmartLoginActivity"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".OtherFunctions" />
-    </activity>
+            <activity
+                android:name="com.facebook.FacebookActivity"
+                android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+                android:label="@string/app_name"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+            <activity
+                android:name="studios.codelight.smartloginlibrary.SmartLoginActivity"
+                android:theme="@style/AppTheme" />
+            <activity android:name=".OtherFunctions" />
+        </activity>
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- Required for Google Login -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
-    <!-- In application tag (Need to register the Login activity in your app) -->
+        <uses-permission android:name="android.permission.INTERNET" />
+        <!-- Required for Google Login -->
+        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+        <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+        <!-- In application tag (Need to register the Login activity in your app) -->
 
-</application>
+        <activity android:name=".SettingsActivity"></activity>
+    </application>
+
 </manifest>
