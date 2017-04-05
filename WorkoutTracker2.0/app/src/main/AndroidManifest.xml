@@ -12,11 +12,12 @@
         <activity android:name=".Homescreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.INTERNET" />
         <!-- Required for Google Login -->
         <uses-permission android:name="android.permission.GET_ACCOUNTS" />
         <uses-permission android:name="android.permission.USE_CREDENTIALS" />
@@ -24,11 +25,12 @@
         <activity
             android:name="studios.codelight.smartloginlibrary.SmartLoginActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".OtherFunctions"></activity>
     </application>
 
 </manifest>
