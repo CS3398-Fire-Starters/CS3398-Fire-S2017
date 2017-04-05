@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 
 public class Homescreen extends AppCompatActivity {
 
-<<<<<<< HEAD
+
     public ImageButton otherFunctions_button;
 
     public void otherFunctions_launcher(){
@@ -23,7 +23,7 @@ public class Homescreen extends AppCompatActivity {
     }
 
 
-=======
+
     public ImageButton Settings_Button;
 
     public void SettingsLauncher()
@@ -47,16 +47,16 @@ public class Homescreen extends AppCompatActivity {
 
 
 
->>>>>>> refs/remotes/origin/Develop
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
-<<<<<<< HEAD
+
         otherFunctions_launcher();
-=======
+
         SettingsLauncher();
->>>>>>> refs/remotes/origin/Develop
+
     }
 
 
