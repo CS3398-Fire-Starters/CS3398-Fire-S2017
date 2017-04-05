@@ -15,16 +15,34 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+<<<<<<< HEAD
+=======
         </activity>
 
         <uses-permission android:name="android.permission.INTERNET" />
         <!-- Required for Google Login -->
         <uses-permission android:name="android.permission.GET_ACCOUNTS" />
         <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+>>>>>>> refs/remotes/origin/Derek's_Branch
         <!-- In application tag (Need to register the Login activity in your app) -->
         <activity
             android:name="studios.codelight.smartloginlibrary.SmartLoginActivity"
             android:theme="@style/AppTheme" />
+<<<<<<< HEAD
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+        </activity>
+
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <!-- Required for Google Login -->
+        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+        <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+        
+</application>
+=======
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -33,4 +51,5 @@
         <activity android:name=".OtherFunctions"></activity>
     </application>
 
+>>>>>>> refs/remotes/origin/Derek's_Branch
 </manifest>
