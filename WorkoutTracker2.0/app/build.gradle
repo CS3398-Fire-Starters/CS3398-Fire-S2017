@@ -19,12 +19,25 @@ android {
     }
 }
 
+
+
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    compile project(':smartloginlibrary-v0.5beta')
+    //Support libraries
+    //Facebook SDK
+    //Google Play Services
+    //GSON library
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.facebook.android:facebook-android-sdk:4.0.1'
+    compile 'com.google.android.gms:play-services:8.1.0'
+    compile 'com.google.code.gson:gson:2.3.1'
     testCompile 'junit:junit:4.12'
 }
