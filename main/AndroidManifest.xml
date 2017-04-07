@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.derek.workouttracker20">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Homescreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- In application tag (Need to register the Login activity in your app) -->
+            <activity
+                android:name="studios.codelight.smartloginlibrary.SmartLoginActivity"
+                android:theme="@style/AppTheme" />
+            <activity
+                android:name="com.facebook.FacebookActivity"
+                android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+                android:label="@string/app_name"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        </activity>
+
+        <uses-permission android:name="android.permission.INTERNET" />
+        <!-- Required for Google Login -->
+        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+        <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+        <activity
+            android:name=".WorkoutSelect"
+            android:label="@string/title_activity_workout_select"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".JogRecord"
+            android:label="@string/title_activity_jog_record"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".WeightRecord"
+            android:label="@string/title_activity_weight_record"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>

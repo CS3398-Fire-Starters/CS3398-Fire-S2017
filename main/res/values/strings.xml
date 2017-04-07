@@ -3,5 +3,4 @@
     <string name="title_activity_workout_select">WorkoutSelect</string>
     <string name="title_activity_jog_record">JogRecord</string>
     <string name="title_activity_weight_record">WeightRecord</string>
-    <string name="title_activity_walking">WalkingActivity</string>
 </resources>

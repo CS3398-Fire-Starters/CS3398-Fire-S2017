@@ -13,19 +13,17 @@ public class Homescreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
-        SettingsLauncher();
-    }
 
-    public ImageButton Settings_Button;
-    public void SettingsLauncher()
-    {
-        Settings_Button=(ImageButton)findViewById(R.id.SettingsButton);
-        Settings_Button.setOnClickListener(new View.OnClickListener() {
+
+        Button btnjog = (Button) findViewById(R.id.imageBtnaddWorkout);
+        btnjog.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent LaunchSettings = new Intent(Homescreen.this, SettingsActivity.class);
-                startActivity(LaunchSettings);
+            public void onClick(View view) {
+                startActivity(new Intent(Homescreen.this,WorkoutSelect.class));
             }
         });
     }
-}
+
+
+};
+

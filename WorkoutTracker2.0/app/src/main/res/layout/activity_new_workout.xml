@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.derek.workouttracker20.NewWorkout">
+
+    <Button
+        android:id="@+id/startRun"
+        android:layout_width="375dp"
+        android:layout_height="85dp"
+        android:text="Start Walk/Run"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="5dp" />
+    <Button
+        android:id="@+id/startWeight"
+        android:layout_width="375dp"
+        android:layout_height="85dp"
+        android:text="Start Weight Lift"
+        tools:layout_editor_absoluteY="135dp"
+        tools:layout_editor_absoluteX="5dp" />
+    <Button
+        android:layout_width="375dp"
+        android:layout_height="85dp"
+        android:text="Start Other"
+        tools:layout_editor_absoluteY="270dp"
+        tools:layout_editor_absoluteX="5dp" />
+
+</android.support.constraint.ConstraintLayout>
