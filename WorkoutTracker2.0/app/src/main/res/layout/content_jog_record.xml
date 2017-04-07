@@ -5,58 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.derek.workouttracker20.WeightRecord"
-    tools:showIn="@layout/activity_weight_record">
+    tools:context="com.example.derek.workouttracker20.JogRecord"
+    tools:showIn="@layout/activity_jog_record">
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/editText3"
         android:layout_width="100dp"
-        android:layout_height="45dp"
+        android:layout_height="46dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Add Weight"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="99dp" />
+        android:text="Enter Miles"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="84dp" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/editText4"
         android:layout_width="100dp"
-        android:layout_height="45dp"
+        android:layout_height="46dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Add Reps"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="176dp" />
-
-    <EditText
-        android:id="@+id/editText9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:text="lbs"
-        android:textAlignment="center"
-        android:textColor="@color/com_facebook_button_background_color_disabled"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="99dp" />
-
-    <EditText
-        android:id="@+id/editText10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:text="reps"
-        android:textAlignment="center"
-        android:textColor="@color/com_facebook_button_background_color_disabled"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="176dp" />
+        android:text="Enter Time"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="177dp" />
 
     <Button
-        android:id="@+id/savewrkout2"
+        android:id="@+id/wrkoutSave1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save Workout"
         tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="302dp" />
+        tools:layout_editor_absoluteY="276dp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Miles"
+        android:textAlignment="center"
+        android:textColor="@color/com_facebook_button_background_color_disabled"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="87dp" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Seconds"
+        android:textAlignment="center"
+        android:textColor="@color/com_facebook_button_background_color_disabled"
+        android:textColorLink="@color/card_background"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="180dp" />
+
 </android.support.constraint.ConstraintLayout>
