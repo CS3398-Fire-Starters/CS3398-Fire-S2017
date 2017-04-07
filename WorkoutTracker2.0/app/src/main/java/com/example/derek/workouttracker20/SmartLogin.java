@@ -8,10 +8,12 @@ import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import studios.codelight.smartloginlibrary.SmartLoginActivity;
 import studios.codelight.smartloginlibrary.SmartLoginBuilder;
 import studios.codelight.smartloginlibrary.SmartLoginConfig;
+import studios.codelight.smartloginlibrary.manager.UserSessionManager;
 import studios.codelight.smartloginlibrary.users.SmartFacebookUser;
 import studios.codelight.smartloginlibrary.users.SmartGoogleUser;
 import studios.codelight.smartloginlibrary.users.SmartUser;
@@ -19,31 +21,22 @@ import studios.codelight.smartloginlibrary.users.SmartUser;
 //Created by JW1762 on 3/30/2017.
 public class SmartLogin extends AppCompatActivity
 {
-    //This is supposed to build the LoginPage for the user.
-    //startActivity however is broken.
-    Context context;
-    ArrayList<String> PERMISSIONS = new ArrayList<>();
-
-    SmartLoginBuilder loginBuilder = new SmartLoginBuilder();
-    Intent intent = loginBuilder.with(context)//(this)?
-            .setAppLogo(1)//APP_LOGO true
-            .isFacebookLoginEnabled(true).withFacebookAppId("APP_ID")//Need FB App_id
-            .withFacebookPermissions(PERMISSIONS)
-            .isGoogleLoginEnabled(true)
-            .build();
-    //startActivityForResult(intent, SmartLoginConfig.LOGIN_REQUEST);
-    //This is disallowing compilation. Unknown how to fix.
-
-    //I dont know if onClick or onCreate is actually needed...
-    public void onClick(View v){
-        //Intent intent = loginBuilder.with(context)//(this)?
-        startActivityForResult(intent, SmartLoginConfig.LOGIN_REQUEST);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ArrayList<String> PERMISSIONS = new ArrayList<>();
+
+        SmartLoginBuilder loginBuilder = new SmartLoginBuilder();
+        Intent intent = loginBuilder.with(this)
+                .setAppLogo(1)//APP_LOGO true
+                .isFacebookLoginEnabled(true).withFacebookAppId("APP_ID")//Need FB App_id
+                .withFacebookPermissions(PERMISSIONS)
+                .isGoogleLoginEnabled(true)
+                .build();
+        startActivityForResult(intent, SmartLoginConfig.LOGIN_REQUEST);
+
         super.onCreate(savedInstanceState);
-        setContentView(studios.codelight.smartloginlibrary.R.layout.activity_smart_login);
+        setContentView(R.layout.activity_login);//activity_smart_login
     }
 
     @Override
