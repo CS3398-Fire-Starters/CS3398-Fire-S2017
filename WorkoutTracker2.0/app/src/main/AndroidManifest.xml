@@ -23,7 +23,6 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -35,30 +34,36 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewWorkout">
-            <activity
-                android:name="com.facebook.FacebookActivity"
-                android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-                android:label="@string/app_name"
-                android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-            <activity android:name=".OtherFunctions" />
-            <activity android:name=".SettingsActivity" />
-            <activity
-                android:name=".WorkoutSelect"
-                android:label="@string/title_activity_workout_select"
-                android:theme="@style/AppTheme.NoActionBar" />
-            <activity
-                android:name=".JogRecord"
-                android:label="@string/title_activity_jog_record"
-                android:theme="@style/AppTheme.NoActionBar" />
-            <activity
-                android:name=".WalkingActivity"
-                android:label="WalkingActivity" />
-            <activity
-                android:name=".WeightRecord"
-                android:label="@string/title_activity_weight_record"
-                android:theme="@style/AppTheme.NoActionBar" />
         </activity>
-        <activity android:name=".BMICalculator"></activity>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".OtherFunctions" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> />
+        </activity>
+        <activity android:name=".SettingsActivity" />
+        <activity
+            android:name=".WorkoutSelect"
+            android:label="@string/title_activity_workout_select"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".JogRecord"
+            android:label="@string/title_activity_jog_record"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".WeightRecord"
+            android:label="@string/title_activity_weight_record"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".BMICalculator" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter> />
+        </activity>
     </application>
 
 </manifest>
