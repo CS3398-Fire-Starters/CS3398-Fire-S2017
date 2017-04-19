@@ -101,7 +101,8 @@
                 android:scaleX="1"
                 android:scaleY="1"
                 android:tint="@android:color/black"
-                app:srcCompat="@drawable/ic_checklist" />
+                app:srcCompat="@drawable/ic_checklist"
+                tools:clickable="true" />
 
             <ImageButton
                 android:id="@+id/imageBtnaddWorkout"
@@ -114,7 +115,8 @@
                 android:scaleX="1.2"
                 android:scaleY="1.2"
                 android:tint="@android:color/black"
-                app:srcCompat="@drawable/ic_action_name" />
+                app:srcCompat="@drawable/ic_action_name"
+                tools:clickable="true" />
 
             <ImageButton
                 android:id="@+id/imageButton_otherFunctions"
@@ -126,7 +128,8 @@
                 android:layout_weight="1"
                 android:background="#00000000"
                 android:scaleType="fitStart"
-                app:srcCompat="@drawable/math" />
+                app:srcCompat="@drawable/math"
+                tools:clickable="true" />
         </LinearLayout>
 
         <LinearLayout
