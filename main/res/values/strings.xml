@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Workout Tracker 2.0</string>
-    <string name="title_activity_workout_select">WorkoutSelect</string>
-    <string name="title_activity_jog_record">JogRecord</string>
-    <string name="title_activity_weight_record">WeightRecord</string>
-</resources>
