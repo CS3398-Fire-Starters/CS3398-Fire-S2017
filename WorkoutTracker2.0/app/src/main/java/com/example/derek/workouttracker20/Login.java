@@ -2,37 +2,36 @@ package com.example.derek.workouttracker20;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.List;
 
-
-public class Login extends Activity implements View.OnClickListener{
-
+public class Login extends Activity implements View.OnClickListener
+{
     private EditText user, pass;
     public Button regB;
     public Button loginB;
     private ProgressDialog pDialog;
 
-    JSONParser jsonParser = new JSONParser();
+    private ArrayList userList = new ArrayList<User>();
 
-    private static final String LOGIN_URL = "app-1492722448.000webhostapp.com/index.php";
+/*
+    JSONParser jsonParser = new JSONParser();
+    private static final String LOGIN_URL = "app-1492722448.000webhostapp.com/login.php";
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -53,32 +52,103 @@ public class Login extends Activity implements View.OnClickListener{
             case R.id.login:
                 new AttemptLogin().execute();
             case R.id.register:
-                //new regUser().execute();
+                new AttemptReg().execute();
             default:
                 break;
         }
     }
-/*
-    class regUser extends AsyncTask<String, String, String>{
-        boolean failure = false;
-
+    class AttemptReg extends AsyncTask<String, String, String>
+    {
         @Override
         protected void onPreExecute(){
             super.onPreExecute();
             pDialog = new ProgressDialog(Login.this);
-            pDialog.setMessage("Registering Account...");
+            pDialog.setMessage("Attempting Registration...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
         }
+        protected void onPostExecute(String message)
+        {
+            pDialog.dismiss();
+        }
+
+        @Override
+        protected String doInBackground(String... args)
+        {
+            ArrayList<User> savedUsers = new ArrayList<User>();
+            //Check for success tag.
+            boolean success = false;
+            String username = user.getText().toString();
+            String password = pass.getText().toString();
+            User newUser = new User(username, password);
+            userList.add(newUser);
+
+            //Cant get it to save as file on phone. I really don't like Android.
+            //saveData(userList);
+
+            if(userList.contains(newUser))
+            {
+                success = true;
+            }
+
+            if(success == true)
+            {
+                Intent startHome = new Intent(Login.this, Homescreen.class);
+                finish();
+                startActivity(startHome);
+                Toast.makeText(Login.this, "Successful Registration!",
+                        Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                Toast.makeText(Login.this, "REGISTRATION FAILURE",
+                        Toast.LENGTH_LONG).show();
+            }
+            return "Done!";
+        }
     }
-*/
+
+    private void saveData(ArrayList<User> userList)
+    {
+        try
+        {
+            FileOutputStream fos = new FileOutputStream("savedUsers.txt");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(userList);
+            oos.close();
+            fos.close();
+            System.out.println("savedUsers.txt written to disk.");
+        }
+        catch(Exception err)
+        {
+            System.out.println(err);
+        }
+    }
+
+    private ArrayList<User> loadData()
+    {
+        ArrayList<User> loadData = null;
+        try
+        {
+            FileInputStream fis = new FileInputStream("savedUsers.txt");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            loadData = (ArrayList<User>) ois.readObject();
+            ois.close();
+            fis.close();
+        }
+        catch(Exception err)
+        {
+            System.out.println(err);
+        }
+        return loadData;
+    }
 
 
-    class AttemptLogin extends AsyncTask<String, String, String> {
+    class AttemptLogin extends AsyncTask<String, String, String>
+    {
         //Before Starting Background Thread, begin progress dialog.
         boolean failure = false;
-
         @Override
         protected void onPreExecute(){
             super.onPreExecute();
@@ -89,49 +159,46 @@ public class Login extends Activity implements View.OnClickListener{
             pDialog.show();
         }
 
+        protected void onPostExecute(String message)
+        {
+            pDialog.dismiss();
+        }
+
         @Override
-        protected String doInBackground(String... args){
+        protected String doInBackground(String... args)
+        {
+            ArrayList<User> savedUsers = new ArrayList<User>();
             //Check for success tag.
-            int success;
+            boolean success = false;
             String username = user.getText().toString();
             String password = pass.getText().toString();
-            try{
-                ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("username", username));
-                params.add(new BasicNameValuePair("password", password));
-                Log.d("request!", "starting");
+            User newUser = new User(username, password);
 
-                JSONObject json = jsonParser.makeHttpRequest(LOGIN_URL, "POST", params);
+            userList.add(newUser);
 
-                //Check for JSON Response.
-                Log.d("Login attempt", json.toString());
+            //Cant get it to save as file on phone. I really don't like Android.
+           // savedUsers = loadData();
 
-                //Success tag for JSON.
-                success = json.getInt(TAG_SUCCESS);
-                if(success == 1)
-                {
-                    Log.d("Successfull login!", json.toString());
-                    Intent ii = new Intent(Login.this, Homescreen.class);
-                    finish();
-                    startActivity(ii);
-                    return json.getString(TAG_MESSAGE);
-                }
-                else
-                {
-                    return json.getString(TAG_MESSAGE);
-                }
-            } catch (JSONException e){
-                e.printStackTrace();
+            if(userList.contains(newUser))
+            {
+              success = true;
             }
-            return null;
+
+            if(success == true)
+            {
+                Intent startHome = new Intent(Login.this, Homescreen.class);
+                finish();
+                startActivity(startHome);
+                Toast.makeText(Login.this, "Successful Login!",
+                        Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                Toast.makeText(Login.this, "LOGIN FAILURE",
+                        Toast.LENGTH_LONG).show();
+            }
+            return "Done!";
         }
 
-        //Now we dismiss Progress Dialog Box.
-        protected void onPostExecute(String message){
-            pDialog.dismiss();
-            if (message != null){
-                Toast.makeText(Login.this, message, Toast.LENGTH_LONG).show();
-            }
-        }
     }
 }
