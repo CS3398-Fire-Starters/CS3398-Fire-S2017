@@ -3,11 +3,12 @@ package com.example.derek.workouttracker20;
         import android.app.Activity;
         import android.content.Intent;
         import android.os.Bundle;
+        import android.support.v7.app.AppCompatActivity;
         import android.view.Menu;
         import android.view.View;
         import android.widget.ImageButton;
 
-public class Homescreen extends Activity {
+public class Homescreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,13 +16,6 @@ public class Homescreen extends Activity {
         setContentView(R.layout.activity_homescreen);
         otherFunctions_launcher();
         SettingsLauncher();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        //inflate?
-        getMenuInflater().inflate(R.layout.activity_homescreen, menu);
-        return true;
     }
 
     public ImageButton otherFunctions_button;

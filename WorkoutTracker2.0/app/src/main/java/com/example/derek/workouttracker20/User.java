@@ -1,11 +1,11 @@
 package com.example.derek.workouttracker20;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class User implements Serializable{
-
-    private static final long serialVersionUID = 9001;
 
     String username;
     protected String password;
@@ -29,5 +29,10 @@ public class User implements Serializable{
     {
         return password;
     }
+
+    public User getCurrentUser(){
+        return this;
+    }
+
 
 }
