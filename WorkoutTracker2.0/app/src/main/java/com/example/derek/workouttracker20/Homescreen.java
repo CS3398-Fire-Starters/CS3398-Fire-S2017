@@ -1,8 +1,10 @@
 package com.example.derek.workouttracker20;
 
+        import android.app.Activity;
         import android.content.Intent;
-        import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
+        import android.support.v7.app.AppCompatActivity;
+        import android.view.Menu;
         import android.view.View;
         import android.widget.ImageButton;
 
@@ -12,15 +14,11 @@ public class Homescreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
-
         otherFunctions_launcher();
-
         SettingsLauncher();
-
     }
 
     public ImageButton otherFunctions_button;
-
     public void otherFunctions_launcher()
     {
         otherFunctions_button = (ImageButton)findViewById(R.id.imageButton_otherFunctions);
@@ -33,10 +31,7 @@ public class Homescreen extends AppCompatActivity {
         });
     }
 
-
-
     public ImageButton Settings_Button;
-
     public void SettingsLauncher()
     {
         Settings_Button=(ImageButton)findViewById(R.id.SettingsButton);
@@ -48,7 +43,5 @@ public class Homescreen extends AppCompatActivity {
                 startActivity(LaunchSettings);
             }
         });
-
     }
-
 }
