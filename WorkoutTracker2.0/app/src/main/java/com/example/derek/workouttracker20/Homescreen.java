@@ -51,9 +51,7 @@ public class Homescreen extends AppCompatActivity {
 
         // Code to open any functions activity when a button is clicked
         listView = (ListView) findViewById(R.id.list);
-        String[] values = new String[]{"BMI Calculator", "BMI Calculator",
-                "BMI Calculator", "BMI Calculator","BMI Calculator",
-                "BMI Calculator", "BMI Calculator",
+        String[] values = new String[]{"BMI Calculator", "Stopwatch",
         };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
