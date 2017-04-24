@@ -38,5 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
         float feetValue = Float.parseFloat(feetStr);
         float inchesValue = Float.parseFloat(inchesStr);
         float weightValue = Float.parseFloat(weightStr);
+
+
     }
 }
