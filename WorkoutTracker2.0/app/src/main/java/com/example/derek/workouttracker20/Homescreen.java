@@ -6,9 +6,13 @@ package com.example.derek.workouttracker20;
         import android.support.v7.app.AppCompatActivity;
         import android.view.Menu;
         import android.view.View;
+        import android.widget.ArrayAdapter;
         import android.widget.ImageButton;
+        import android.widget.ListView;
 
 public class Homescreen extends AppCompatActivity {
+
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +20,18 @@ public class Homescreen extends AppCompatActivity {
         setContentView(R.layout.activity_homescreen);
         otherFunctions_launcher();
         SettingsLauncher();
+
+        // Code to open any functions activity when a button is clicked
+        listView = (ListView) findViewById(R.id.list);
+        String[] values = new String[]{"BMI Calculator", "BMI Calculator",
+                "BMI Calculator", "BMI Calculator","BMI Calculator",
+                "BMI Calculator", "BMI Calculator",
+        };
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.activity_list_item, android.R.id.text1, values);
+
+        listView.setAdapter(adapter);
     }
 
     public ImageButton otherFunctions_button;
