@@ -31,6 +31,10 @@ public class SettingsActivity extends AppCompatActivity {
         String feetStr = feet.getText().toString();
         String inchesStr = inches.getText().toString();
 
+        //String ShowUser = getCurrentUser();
+        //this should be possible with Serializable but I'm having
+        //trouble figuring out how
+
         float feetValue = Float.parseFloat(feetStr);
         float inchesValue = Float.parseFloat(inchesStr);
         float weightValue = Float.parseFloat(weightStr);

@@ -52,7 +52,7 @@
         android:inputType="textPersonName"
         android:text="Edit your Weight in pounds"
         tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="299dp" />
+        tools:layout_editor_absoluteY="334dp" />
 
     <TextView
         android:id="@+id/Show_User"

@@ -14,6 +14,7 @@ public class User implements Serializable{
     float weight = 0; //in lbs
     float height = 0; //in inches
 
+
     //constructor
     public User(String password, String username)
     {
