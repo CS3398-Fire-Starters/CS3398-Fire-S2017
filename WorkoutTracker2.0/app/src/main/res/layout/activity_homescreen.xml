@@ -106,7 +106,7 @@
                 tools:clickable="true" />
 
             <ImageButton
-                android:id="@+id/imageBtnaddWorkout"
+                android:id="@+id/imageButton_addWorkout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"

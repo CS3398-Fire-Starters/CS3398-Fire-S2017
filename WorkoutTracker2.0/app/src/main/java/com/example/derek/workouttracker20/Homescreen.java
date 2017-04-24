@@ -39,8 +39,21 @@ public class Homescreen extends AppCompatActivity {
         });
     }
 
+    public ImageButton addWorkout_button;
+    public void addWorkout_launcher()
+    {
+        addWorkout_button = (ImageButton)findViewById(R.id.imageButton_addWorkout);
+        addWorkout_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Homescreen.this, NewWorkout.class);
+                startActivity(myIntent);
+            }
+        });
+    }
 
-    ListView listView;
+
+    //ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,16 +61,17 @@ public class Homescreen extends AppCompatActivity {
         setContentView(R.layout.activity_homescreen);
         otherFunctions_launcher();
         SettingsLauncher();
+        addWorkout_launcher();
 
         // Code to open any functions activity when a button is clicked
-        listView = (ListView) findViewById(R.id.list);
+        /*listView = (ListView) findViewById(R.id.list);
         String[] values = new String[]{"BMI Calculator", "Stopwatch",
         };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.activity_list_item, android.R.id.text1, values);
 
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter);*/
     }
 
 }

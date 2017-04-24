@@ -14,8 +14,6 @@ import java.util.List;
 import java.util.ArrayList;
 public class Stopwatch extends AppCompatActivity {
 
-    public class MainActivity extends AppCompatActivity {
-
         TextView textView;
 
         Button start, pause, reset, lap;
@@ -50,7 +48,7 @@ public class Stopwatch extends AppCompatActivity {
 
             ListElementsArrayList = new ArrayList<String>(Arrays.asList(ListElements));
 
-            adapter = new ArrayAdapter<String>(MainActivity.this,
+            adapter = new ArrayAdapter<String>(Stopwatch.this,
                     android.R.layout.simple_list_item_1,
                     ListElementsArrayList
             );
@@ -141,4 +139,3 @@ public class Stopwatch extends AppCompatActivity {
         };
 
     }
-}
