@@ -10,14 +10,6 @@ package com.example.derek.workouttracker20;
 
 public class Homescreen extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homescreen);
-        otherFunctions_launcher();
-        SettingsLauncher();
-    }
-
     public ImageButton otherFunctions_button;
     public void otherFunctions_launcher()
     {
@@ -43,5 +35,13 @@ public class Homescreen extends AppCompatActivity {
                 startActivity(LaunchSettings);
             }
         });
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_homescreen);
+        otherFunctions_launcher();
+        SettingsLauncher();
     }
 }
