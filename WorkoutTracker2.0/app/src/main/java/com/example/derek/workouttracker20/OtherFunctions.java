@@ -34,10 +34,10 @@ public class OtherFunctions  extends AppCompatActivity {
                     startActivityForResult(myIntent, 0);
                 }
 
-                //if (position == 1) {
-                   // Intent myIntent = new Intent(view.getContext(), Stopwatch.class);
-                  //  startActivityForResult(myIntent, 0);
-                //}
+                if (position == 1) {
+                    Intent myIntent = new Intent(view.getContext(), Stopwatch.class);
+                    startActivityForResult(myIntent, 0);
+                }
 
             }
         });
