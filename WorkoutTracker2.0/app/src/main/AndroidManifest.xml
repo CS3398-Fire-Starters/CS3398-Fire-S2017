@@ -39,9 +39,18 @@
         <activity
             android:name=".NewWorkout">
         </activity>
+        <activity
+            android:name=".SignupActivity"
+            android:label="Sign Up"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
 
         <activity
             android:name=".OtherFunctions" >
+        </activity>
+
+        <activity
+            android:name=".Stopwatch" >
         </activity>
 
         <activity android:name=".SettingsActivity" />
