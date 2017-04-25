@@ -42,7 +42,7 @@
                     android:layout_marginLeft="-100dp"
                     android:layout_weight="1"
                     android:gravity="left|center_vertical"
-                    android:text="Workout Companion"
+                    android:text="Workout Tracker 2.0"
                     android:textAllCaps="false"
                     android:textColor="#363636"
                     android:textIsSelectable="false"
@@ -99,19 +99,20 @@
                 android:layout_weight="1"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
-                android:scaleX="1"
-                android:scaleY="1"
+                android:scaleX="1.1"
+                android:scaleY="1.1"
                 android:tint="@android:color/black"
                 app:srcCompat="@drawable/ic_checklist"
                 tools:clickable="true" />
 
             <ImageButton
-                android:id="@+id/imageBtnaddWorkout"
+                android:id="@+id/imageButton_addWorkout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_weight="1"
                 android:background="#00000000"
+                android:paddingBottom="5dp"
                 android:scaleType="fitCenter"
                 android:scaleX="1.2"
                 android:scaleY="1.2"
@@ -129,6 +130,8 @@
                 android:layout_weight="1"
                 android:background="#00000000"
                 android:scaleType="fitStart"
+                android:scaleX=".9"
+                android:scaleY=".9"
                 app:srcCompat="@drawable/math"
                 tools:clickable="true" />
         </LinearLayout>
@@ -184,11 +187,12 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="Recent Workout Summary"
+                android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView7"
                 android:layout_weight="1"
+                android:text="Recent Workout Summary"
+                android:textColor="#000000"
                 android:textSize="24sp" />
 
         </LinearLayout>

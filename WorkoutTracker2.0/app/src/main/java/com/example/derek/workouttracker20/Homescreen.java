@@ -12,7 +12,7 @@ package com.example.derek.workouttracker20;
 
 public class Homescreen extends AppCompatActivity {
 
-    //ListView listView;
+    ListView listViewHome;
 
     public ImageButton otherFunctions_button;
     public void otherFunctions_launcher()
@@ -41,13 +41,51 @@ public class Homescreen extends AppCompatActivity {
         });
     }
 
+    public ImageButton addWorkout_button;
+    public void addWorkout_launcher()
+    {
+        addWorkout_button = (ImageButton)findViewById(R.id.imageButton_addWorkout);
+        addWorkout_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Homescreen.this, NewWorkout.class);
+                startActivity(myIntent);
+            }
+        });
+    }
+
+    public ImageButton progress_button;
+    public void progress_launcher()
+    {
+        progress_button = (ImageButton)findViewById(R.id.imageButton_progress);
+        progress_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Homescreen.this, Progress.class);
+                startActivity(myIntent);
+            }
+        });
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
         otherFunctions_launcher();
         SettingsLauncher();
+        addWorkout_launcher();
+        progress_launcher();
 
+        // Code to open any functions activity when a button is clicked
+        /*listViewHome = (ListView) findViewById(R.id.list);
+        String[] values = new String[]{"BMI Calculator", "Stopwatch",
+        };
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.activity_list_item, android.R.id.text1, values);
+
+        listViewHome.setAdapter(adapter);*/
     }
+
 }
