@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Workout Tracker 2.0</string>
+    <string name="title_activity_workout_select">WorkoutSelect</string>
+    <string name="title_activity_jog_record">JogRecord</string>
+    <string name="title_activity_weight_record">WeightRecord</string>
+    <string name="title_activity_walking">WalkingActivity</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="feet">Feet</string>
+    <string name="inches">Inches</string>
+    <string name="calculateBMI">Calculate BMI</string>
+    <string name="underweight">Underweight</string>
+    <string name="normal_weight">Normal</string>
+    <string name="overweight">Overweight</string>
+    <string name="obese">Obese</string>
+</resources>

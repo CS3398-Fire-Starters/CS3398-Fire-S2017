@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_number": "46736569311",
+    "project_id": "firebase-workouttracker"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46736569311:android:789db410591cf934",
+        "android_client_info": {
+          "package_name": "com.example.derek.workouttracker20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "46736569311-5fmaidmp98p78cdrl12vcbrm0nfqgd8r.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "46736569311-qqe0rr2n5ufn4li0r546ja6om20mo8bk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.derek.workouttracker20",
+            "certificate_hash": "373be69f264bf7a469f000e4cfc9a7ee39035a62"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxjdKB83KtPDd8_2KjkTw8IDHxZ2CHd8M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-96534348-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
