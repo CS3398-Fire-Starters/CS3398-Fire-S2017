@@ -16,7 +16,7 @@ android:
     - '.+'
 
 before_script:
-  - chmod +x ./gradlew
+  - chmod +x ./WorkoutTracker2.0 gradlew
 
 script:
-  - ./gradlew build
+  - ./WorkoutTracker2.0 gradlew build
