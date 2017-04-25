@@ -55,6 +55,8 @@
 
         <activity android:name=".SettingsActivity" />
 
+        <activity android:name=".Progress" />
+
         <activity
             android:name=".WorkoutSelect"
             android:label="@string/title_activity_workout_select"
