@@ -10,7 +10,22 @@ package com.example.derek.workouttracker20;
         import android.widget.ImageButton;
         import android.widget.ListView;
 
-public class Homescreen extends AppCompatActivity {
+public class Homescreen extends AppCompatActivity
+{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_homescreen);
+        otherFunctions_launcher();
+        SettingsLauncher();
+        addWorkout_launcher();
+
+        //Receives the user object from Signup or Login.
+        Intent getUser = getIntent();
+        User curUser = (User)getUser.getSerializableExtra("curUser");
+    }
 
     public ImageButton otherFunctions_button;
     public void otherFunctions_launcher()
@@ -51,27 +66,4 @@ public class Homescreen extends AppCompatActivity {
             }
         });
     }
-
-
-    //ListView listView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homescreen);
-        otherFunctions_launcher();
-        SettingsLauncher();
-        addWorkout_launcher();
-
-        // Code to open any functions activity when a button is clicked
-        /*listView = (ListView) findViewById(R.id.list);
-        String[] values = new String[]{"BMI Calculator", "Stopwatch",
-        };
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.activity_list_item, android.R.id.text1, values);
-
-        listView.setAdapter(adapter);*/
-    }
-
 }

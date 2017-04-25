@@ -40,7 +40,9 @@
             android:name=".NewWorkout">
         </activity>
         <activity
-            android:name=".SignupActivity">
+            android:name=".SignupActivity"
+            android:label="Sign Up"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
 
         <activity
