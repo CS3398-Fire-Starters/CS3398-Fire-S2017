@@ -22,13 +22,13 @@
 
             <TextView
                 android:id="@+id/newWorkout"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Start New Workout"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textColor="#000000"
-                android:textSize="36sp" />
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
