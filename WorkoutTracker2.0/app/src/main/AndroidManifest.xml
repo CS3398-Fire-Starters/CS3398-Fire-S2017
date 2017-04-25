@@ -39,6 +39,9 @@
         <activity
             android:name=".NewWorkout">
         </activity>
+        <activity
+            android:name=".SignupActivity">
+        </activity>
 
         <activity
             android:name=".OtherFunctions" >
