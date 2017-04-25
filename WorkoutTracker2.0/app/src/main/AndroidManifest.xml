@@ -49,6 +49,10 @@
             android:name=".OtherFunctions" >
         </activity>
 
+        <activity
+            android:name=".Stopwatch" >
+        </activity>
+
         <activity android:name=".SettingsActivity" />
 
         <activity
