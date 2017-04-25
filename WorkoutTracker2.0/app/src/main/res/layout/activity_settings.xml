@@ -67,7 +67,13 @@
             android:text="Update"
             tools:layout_editor_absoluteX="147dp"
             tools:layout_editor_absoluteY="386dp" />
-
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/Show_User"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="230dp" />
 
 </android.support.constraint.ConstraintLayout>
