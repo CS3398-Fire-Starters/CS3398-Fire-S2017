@@ -1,14 +1,14 @@
 package com.example.derek.workouttracker20;
 
-        import android.app.Activity;
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.support.v7.app.AppCompatActivity;
-        import android.view.Menu;
-        import android.view.View;
-        import android.widget.ArrayAdapter;
-        import android.widget.ImageButton;
-        import android.widget.ListView;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
+import android.widget.ListView;
 
 public class Homescreen extends AppCompatActivity {
 
@@ -76,6 +76,10 @@ public class Homescreen extends AppCompatActivity {
         SettingsLauncher();
         addWorkout_launcher();
         progress_launcher();
+
+        //Receives the user object from Signup or Login.
+        Intent getUser = getIntent();
+        User curUser = (User)getUser.getSerializableExtra("curUser");
 
         // Code to open any functions activity when a button is clicked
         listViewHome = (ListView) findViewById(R.id.listView);

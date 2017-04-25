@@ -3,7 +3,6 @@ package com.example.derek.workouttracker20;
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
@@ -13,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -26,6 +24,7 @@ public class Login extends Activity implements View.OnClickListener
     public Button regB;
     public Button loginB;
     private ProgressDialog pDialog;
+
     private ArrayList userList = new ArrayList<User>();
 
     @Override
@@ -37,10 +36,23 @@ public class Login extends Activity implements View.OnClickListener
         pass = (EditText)findViewById(R.id.passwordText);
 
         loginB = (Button)findViewById(R.id.login);
-        loginB.setOnClickListener(this);
+        loginB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startHome = new Intent(Login.this, Homescreen.class);
+                startActivity(startHome);
+            }
+        });
 
         regB = (Button)findViewById(R.id.register);
-        regB.setOnClickListener(this);
+        regB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startReg = new Intent(Login.this, SignupActivity.class);
+                startActivity(startReg);
+            }
+        });
+
         //Requesting Permissions
         ActivityCompat.requestPermissions(Login.this,
                 new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
@@ -50,67 +62,29 @@ public class Login extends Activity implements View.OnClickListener
                 2);
     }
 
-    public void onClick(View v){
+    public void onClick(View v)
+    {
         switch (v.getId()){
             case R.id.login:
                 new AttemptLogin().execute();
             case R.id.register:
-                Intent startReg = new Intent(Login.this, SignupActivity.class);
-                startActivity(startReg);
+                //new AttemptReg().execute();
             default:
                 break;
         }
     }
 
-    private void saveData(ArrayList<User> userList)
-    {
-        try
-        {
-            FileOutputStream fos = new FileOutputStream("savedUsers.txt");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(userList);
-            oos.close();
-            fos.close();
-            System.out.println("savedUsers.txt written to disk.");
-        }
-        catch(Exception err)
-        {
-            System.out.println(err);
-        }
-    }
-
-    private ArrayList<User> loadData()
-    {
-        ArrayList<User> loadData = null;
-        try
-        {
-            FileInputStream fis = new FileInputStream("savedUsers.txt");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            loadData = (ArrayList<User>) ois.readObject();
-            ois.close();
-            fis.close();
-        }
-        catch(Exception err)
-        {
-            System.out.println(err);
-        }
-        return loadData;
-    }
-
     class AttemptLogin extends AsyncTask<String, String, String>
     {
-        //Before Starting Background Thread, begin progress dialog.
-        boolean failure = false;
         @Override
         protected void onPreExecute(){
             super.onPreExecute();
             pDialog = new ProgressDialog(Login.this);
-            pDialog.setMessage("Attempting login...");
+            pDialog.setMessage("Attempting Login...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
         }
-
         protected void onPostExecute(String message)
         {
             pDialog.dismiss();
@@ -125,33 +99,31 @@ public class Login extends Activity implements View.OnClickListener
             String username = user.getText().toString();
             String password = pass.getText().toString();
             User newUser = new User(username, password);
-
             userList.add(newUser);
 
             //Cant get it to save as file on phone. I really don't like Android.
-           // savedUsers = loadData();
+            //saveData(userList);
 
             if(userList.contains(newUser))
             {
-              success = true;
+                success = true;
             }
-
             if(success == true)
             {
-                Intent startHome = new Intent(Login.this, Homescreen.class);
-                finish();
-                startActivity(startHome);
-                Toast.makeText(Login.this, "Successful Login!",
+                Toast.makeText(Login.this, "Successful Registration!",
                         Toast.LENGTH_LONG).show();
+                finish();
             }
             else
             {
-                Toast.makeText(Login.this, "LOGIN FAILURE",
+                Toast.makeText(Login.this, "REGISTRATION FAILURE",
                         Toast.LENGTH_LONG).show();
             }
+            //Send user to Homescreen page.
+            Intent sendUser = new Intent(Login.this, Homescreen.class);
+            sendUser.putExtra("curUser", newUser);
             return "Done!";
         }
-
     }
 
     //Requesting Permission Method
