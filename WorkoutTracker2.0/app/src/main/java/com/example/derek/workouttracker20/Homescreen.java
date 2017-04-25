@@ -78,14 +78,14 @@ public class Homescreen extends AppCompatActivity {
         progress_launcher();
 
         // Code to open any functions activity when a button is clicked
-        /*listViewHome = (ListView) findViewById(R.id.list);
-        String[] values = new String[]{"BMI Calculator", "Stopwatch",
+        listViewHome = (ListView) findViewById(R.id.listView);
+        String[] values = new String[]{"Pull ups:           3-8", "Push ups:         5-15", "Bench Press:    6-8", "Butterflies:        4-10",
         };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.activity_list_item, android.R.id.text1, values);
 
-        listViewHome.setAdapter(adapter);*/
+        listViewHome.setAdapter(adapter);
     }
 
 }
