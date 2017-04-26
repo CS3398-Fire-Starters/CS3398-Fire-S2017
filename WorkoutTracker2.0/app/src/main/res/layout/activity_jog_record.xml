@@ -38,7 +38,7 @@
             tools:layout_editor_absoluteY="184dp" />
 
         <Button
-            android:id="@+id/startWorkout"
+            android:id="@+id/recordWorkoutCardio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"

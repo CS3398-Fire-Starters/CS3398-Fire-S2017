@@ -76,7 +76,13 @@ public class SignupActivity extends AppCompatActivity
                         && !found)
                 {
                 Toast.makeText(SignupActivity.this, "User Successfully created", Toast.LENGTH_LONG).show();
-                    //Make and send user object to Homescreen page.
+
+                //Handle Saving User Data Here
+                String sep = "|", str = sep+fName+sep+lName+sep+emailStr+sep;
+                FileReaderWriter saveData = new FileReaderWriter(getApplicationContext());
+                saveData.loginCreate("user/", user.toLowerCase(), pass, str);
+
+                //Make and send user object to Homescreen page.
                 User curUser = new User(user, pass, fName, lName, emailStr);
                 final Intent sendUser = new Intent(SignupActivity.this, Homescreen.class);
                 sendUser.putExtra("curUser", curUser);
@@ -84,19 +90,5 @@ public class SignupActivity extends AppCompatActivity
             }
         }
     });
-
-
-
-
-/*
-
-                    //Handle Saving User Data Here
-                    String sep = "|", str = sep+fName+sep+lName+sep+emailStr+sep;
-                    FileReaderWriter saveData = new FileReaderWriter(getApplicationContext());
-                    saveData.loginCreate("user/", user.toLowerCase(), pass, str);
-                    startActivity(i);
-
-        });*/
-
 }
 }

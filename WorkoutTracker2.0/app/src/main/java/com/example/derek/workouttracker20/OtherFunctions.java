@@ -15,6 +15,8 @@ public class OtherFunctions  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other_functions);
+        final Intent getUser = getIntent();
+        final User curUser = (User)getUser.getSerializableExtra("curUser");
 
         // Code to open any functions activity when a button is clicked
         listView = (ListView) findViewById(R.id.list);

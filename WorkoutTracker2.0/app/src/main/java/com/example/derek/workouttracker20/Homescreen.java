@@ -15,20 +15,21 @@ public class Homescreen extends AppCompatActivity {
     ListView listViewHome;
 
     public ImageButton otherFunctions_button;
-    public void otherFunctions_launcher()
+    public void otherFunctions_launcher(final User curUser)
     {
         otherFunctions_button = (ImageButton)findViewById(R.id.imageButton_otherFunctions);
         otherFunctions_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(Homescreen.this, OtherFunctions.class);
+                myIntent.putExtra("curUser", curUser);
                 startActivity(myIntent);
             }
         });
     }
 
     public ImageButton Settings_Button;
-    public void SettingsLauncher()
+    public void SettingsLauncher(final User curUser)
     {
         Settings_Button=(ImageButton)findViewById(R.id.SettingsButton);
         Settings_Button.setOnClickListener(new View.OnClickListener() {
@@ -36,50 +37,53 @@ public class Homescreen extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent LaunchSettings = new Intent(Homescreen.this, SettingsActivity.class);
+                LaunchSettings.putExtra("curUser", curUser);
                 startActivity(LaunchSettings);
             }
         });
     }
 
     public ImageButton addWorkout_button;
-    public void addWorkout_launcher()
+    public void addWorkout_launcher(final User curUser)
     {
         addWorkout_button = (ImageButton)findViewById(R.id.imageButton_addWorkout);
         addWorkout_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(Homescreen.this, NewWorkout.class);
+                myIntent.putExtra("curUser", curUser);
                 startActivity(myIntent);
             }
         });
     }
 
     public ImageButton progress_button;
-    public void progress_launcher()
+    public void progress_launcher(final User curUser)
     {
         progress_button = (ImageButton)findViewById(R.id.imageButton_progress);
         progress_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(Homescreen.this, Progress.class);
+                myIntent.putExtra("curUser", curUser);
                 startActivity(myIntent);
             }
         });
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
-        otherFunctions_launcher();
-        SettingsLauncher();
-        addWorkout_launcher();
-        progress_launcher();
 
         //Receives the user object from Signup or Login.
-        Intent getUser = getIntent();
-        User curUser = (User)getUser.getSerializableExtra("curUser");
+        final Intent getUser = getIntent();
+        final User curUser = (User)getUser.getSerializableExtra("curUser");
+
+        otherFunctions_launcher(curUser);
+        SettingsLauncher(curUser);
+        addWorkout_launcher(curUser);
+        progress_launcher(curUser);
 
         // Code to open any functions activity when a button is clicked
         listViewHome = (ListView) findViewById(R.id.listView);
@@ -91,5 +95,4 @@ public class Homescreen extends AppCompatActivity {
 
         listViewHome.setAdapter(adapter);
     }
-
 }
