@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -17,11 +19,25 @@ public class SettingsActivity extends AppCompatActivity {
     private TextView ShowUser;
     private TextView ShowPassword;
 
+    public Button settingsButton;
+    public void settingsActivity_launcher()
+    {
+        settingsButton = (Button)findViewById(R.id.SaveSettingsButton);
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(SettingsActivity.this, Homescreen.class);
+                startActivity(myIntent);
+            }
+    });
+}
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        settingsActivity_launcher();
 
         feet = (EditText) findViewById(R.id.Edit_Feet);
         inches = (EditText) findViewById(R.id.Edit_inches);
