@@ -22,10 +22,8 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-
-        //Receives the user object from Signup or Login.
-        Intent getUser = getIntent();
-        User curUser = (User)getUser.getSerializableExtra("curUser");
+        final Intent getUser = getIntent();
+        final User curUser = (User)getUser.getSerializableExtra("curUser");
 
         feet = (EditText) findViewById(R.id.Edit_Feet);
         inches = (EditText) findViewById(R.id.Edit_inches);

@@ -89,9 +89,6 @@ public class Login extends Activity
                     Toast.makeText(Login.this, "Login FAILURE", Toast.LENGTH_LONG).show();
                     pDialog.dismiss();
                 }
-                //Send user to Settings page
-                //   Intent sendUserToSettings = new Intent(Login.this, SettingsActivity.class);
-                // sendUserToSettings.putExtra("curUser", newUser);
             }
         });
 

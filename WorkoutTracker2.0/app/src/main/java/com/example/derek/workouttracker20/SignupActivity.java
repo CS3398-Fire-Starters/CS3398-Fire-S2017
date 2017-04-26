@@ -81,7 +81,6 @@ public class SignupActivity extends AppCompatActivity
                 String sep = "|", str = sep+fName+sep+lName+sep+emailStr+sep;
                 FileReaderWriter saveData = new FileReaderWriter(getApplicationContext());
                 saveData.loginCreate("user/", user.toLowerCase(), pass, str);
-                //startActivity(i);
 
                 //Make and send user object to Homescreen page.
                 User curUser = new User(user, pass, fName, lName, emailStr);

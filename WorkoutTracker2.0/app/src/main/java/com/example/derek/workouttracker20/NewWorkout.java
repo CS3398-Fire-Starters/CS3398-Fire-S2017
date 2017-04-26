@@ -39,6 +39,8 @@ public class NewWorkout extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_workout);
+        final Intent getUser = getIntent();
+        final User curUser = (User)getUser.getSerializableExtra("curUser");
         weightRecord_launcher();
         jogRecord_launcher();
 

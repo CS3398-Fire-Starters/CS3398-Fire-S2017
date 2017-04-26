@@ -397,9 +397,6 @@ public class FileReaderWriter {
                 }
                 br.close();
             }
-
-
-
         } catch (FileNotFoundException e) {
             Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
             return "";
@@ -440,95 +437,6 @@ public class FileReaderWriter {
             }
 
         }
-    }
-
-
-
-    public ArrayList<String> searchReader(String dir, String location, String resType,String advSearch){
-
-        String filename = "searchStorage.txt";
-        String line = "";
-        String line2 = "";
-        String root = Environment.getExternalStorageDirectory().toString();
-        File fDir = new File(root + "/otm/"+dir);
-        fDir.mkdirs();
-        File file = new File(fDir, filename);
-
-        ArrayList<String> arr = new ArrayList<>();
-
-
-        try{
-            if (file.exists()) {
-
-                BufferedReader br = new BufferedReader(new FileReader(file));
-
-                while((line = br.readLine()) != null){
-                    if (line.contains(location)) {
-                        if(resType.equals("All")){
-
-                            //arraylist.add(line);
-                            //this is where grabs all stuff so add to arraylist
-                            arr.add(line);
-
-                            if (!advSearch.equals("")) {
-
-                                String temp[] = line.split("<");
-                                File searchFile = new File(fDir, temp[0]);
-                                BufferedReader brSearch = new BufferedReader(new FileReader(searchFile));
-
-                                while((line2 = brSearch.readLine()) != null){
-                                    if (line2.contains("^") && line2.contains(advSearch) && advSearch != "") {
-
-                                        //arraylist.add(line);
-                                        //this is where grabs all stuff so add to arraylist
-                                        arr.add(line2);
-                                        break;
-
-                                    }
-                                }
-                                brSearch.close();
-                            }
-                        }
-                        if (line.contains(resType) ){
-
-                            //arraylist.add(line);
-                            //this is where grabs all stuff so add to arraylist
-                            arr.add(line);
-
-                            if (!advSearch.equals("")) {
-
-                                String temp[] = line.split("<");
-                                File searchFile = new File(fDir, temp[0]);
-                                BufferedReader brSearch = new BufferedReader(new FileReader(searchFile));
-
-                                while((line2 = brSearch.readLine()) != null){
-                                    if (line2.contains("^") && line2.contains(advSearch) && advSearch != "") {
-
-                                        //arraylist.add(line);
-                                        //this is where grabs all stuff so add to arraylist
-                                        arr.add(line2);
-
-
-                                    }
-                                }
-                                brSearch.close();
-                            }
-                        }
-                    }
-                }
-                br.close();
-
-            }
-
-        } catch (FileNotFoundException e) {
-            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
-            return null;
-        } catch (IOException e) {
-            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
-            return null;
-        }
-
-        return arr;
     }
 
     public void mDirDelete(String dir){
