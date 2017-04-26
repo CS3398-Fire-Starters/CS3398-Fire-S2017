@@ -13,67 +13,174 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <TextView
-            android:id="@+id/HeightLabel"
+        <LinearLayout
+            android:id="@+id/ShowUser"
             android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Height"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="160dp"
-            tools:layout_editor_absoluteY="99dp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/Edit_Feet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:contentDescription="user.GetWeight()"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Feet"
-            tools:layout_editor_absoluteX="74dp"
-            tools:layout_editor_absoluteY="142dp" />
+            <TextView
+                android:id="@+id/Show_User"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="26dp" />
+        </LinearLayout>
 
-        <EditText
-            android:id="@+id/Edit_inches"
+        <LinearLayout
+            android:id="@+id/ShowPasword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Inches"
-            tools:layout_editor_absoluteX="75dp"
-            tools:layout_editor_absoluteY="184dp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
 
-        <EditText
-            android:id="@+id/Edit_Weight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Edit your Weight in pounds"
-            tools:layout_editor_absoluteX="73dp"
-            tools:layout_editor_absoluteY="334dp" />
+            <TextView
+                android:id="@+id/Show_Password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="53dp" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/SaveSettingsButton"
+        <LinearLayout
+            android:id="@+id/EditPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <EditText
+                android:id="@+id/Edit_Password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Edit Password"
+                tools:layout_editor_absoluteX="85dp"
+                tools:layout_editor_absoluteY="101dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Height_Label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/HeightLabel"
+                android:layout_width="368dp"
+                android:layout_height="31dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Height"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="159dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/EditFeet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="UpdateSettings"
-            android:text="Update"
-            tools:layout_editor_absoluteX="147dp"
-            tools:layout_editor_absoluteY="386dp" />
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <EditText
+                android:id="@+id/Edit_Feet"
+                android:layout_width="368dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="user.GetWeight()"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Feet"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="206dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/EditInches"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/Edit_inches"
+                android:layout_width="368dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Inches"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="260dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/WeightLabel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/WeightLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Weight"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="336dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/EditWeight"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/Edit_Weight"
+                android:layout_width="374dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Edit your Weight in pounds"
+                tools:layout_editor_absoluteX="5dp"
+                tools:layout_editor_absoluteY="372dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/UpdateButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <Button
+                android:id="@+id/SaveSettingsButton"
+                android:layout_width="368dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="UpdateSettings"
+                android:text="Update"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="447dp" />
+        </LinearLayout>
+
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/Show_User"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="230dp" />
 
 </android.support.constraint.ConstraintLayout>
