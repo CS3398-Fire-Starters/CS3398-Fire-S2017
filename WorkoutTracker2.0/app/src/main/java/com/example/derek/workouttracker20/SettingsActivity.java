@@ -22,6 +22,23 @@ public class SettingsActivity extends AppCompatActivity {
     public Button settingsButton;
     public void settingsActivity_launcher()
     {
+        /*
+
+        String weightStr = weight.getText().toString();
+        String feetStr = feet.getText().toString();
+        String inchesStr = inches.getText().toString();
+        String newPasswordstr = newPassword.getText().toString();
+
+
+        float feetValue = Float.parseFloat(feetStr);
+        float inchesValue = Float.parseFloat(inchesStr);
+        float weightValue = Float.parseFloat(weightStr);
+
+        here I call the setters with these new floats
+        */
+
+
+
         settingsButton = (Button)findViewById(R.id.SaveSettingsButton);
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,27 +62,13 @@ public class SettingsActivity extends AppCompatActivity {
         ShowUser = (TextView) findViewById(R.id.Show_User);
         ShowPassword = (TextView) findViewById(R.id.Show_Password);
 
-
-
-
-    }
-
-    public void UpdateSettings(View v) {
         Intent getUser = getIntent();
         User curUser = (User)getUser.getSerializableExtra("curUser");
+
         /*
-        ShowUser.setText(curUser.getUsername().toString());
-        ShowPassword.setText(curUser.getPassword.().toString());
-
-        String weightStr = weight.getText().toString();
-        String feetStr = feet.getText().toString();
-        String inchesStr = inches.getText().toString();
-        String newPasswordstr = newPassword.getText().toString();
-
-
-        float feetValue = Float.parseFloat(feetStr);
-        float inchesValue = Float.parseFloat(inchesStr);
-        float weightValue = Float.parseFloat(weightStr);
+        ShowUser.setText(curUser.getUsername());
+        ShowPassword.setText(curUser.getPassword.());
         */
     }
+
 }
