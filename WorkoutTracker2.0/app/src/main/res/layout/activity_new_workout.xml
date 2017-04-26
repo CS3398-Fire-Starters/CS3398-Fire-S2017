@@ -6,25 +6,86 @@
     android:layout_height="match_parent"
     tools:context="com.example.derek.workouttracker20.NewWorkout">
 
-    <Button
-        android:id="@+id/startRun"
-        android:layout_width="375dp"
-        android:layout_height="85dp"
-        android:text="Start Walk/Run"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="5dp" />
-    <Button
-        android:id="@+id/startWeight"
-        android:layout_width="375dp"
-        android:layout_height="85dp"
-        android:text="Start Weight Lift"
-        tools:layout_editor_absoluteY="135dp"
-        tools:layout_editor_absoluteX="5dp" />
-    <Button
-        android:layout_width="375dp"
-        android:layout_height="85dp"
-        android:text="Start Other"
-        tools:layout_editor_absoluteY="270dp"
-        tools:layout_editor_absoluteX="5dp" />
+    <LinearLayout
+        android:id="@+id/baseLayout"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
+        <LinearLayout
+            android:id="@+id/topSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/newWorkout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:text="Start New Workout"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pictureSection"
+            android:layout_width="wrap_content"
+            android:layout_height="159dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/cardioWorkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:scaleType="fitStart"
+                app:srcCompat="@drawable/running_man" />
+
+            <ImageButton
+                android:id="@+id/liftingWorkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/weight_lifting" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cardioWorkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:text="New Cardio Workout"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/liftWorkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:layout_weight="1"
+                android:text="New Lifting Workout"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

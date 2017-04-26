@@ -1,5 +1,6 @@
 package com.example.derek.workouttracker20;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,8 @@ public class BMICalculator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmicalculator);
+        final Intent getUser = getIntent();
+        final User curUser = (User)getUser.getSerializableExtra("curUser");
         feet = (EditText) findViewById(R.id.feet);
         inches = (EditText) findViewById(R.id.inches);
         weight = (EditText) findViewById(R.id.weight);
