@@ -18,7 +18,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class Login extends Activity implements View.OnClickListener
+public class Login extends Activity
 {
     private EditText user, pass;
     public Button regB;
@@ -35,12 +35,63 @@ public class Login extends Activity implements View.OnClickListener
         user = (EditText)findViewById(R.id.userText);
         pass = (EditText)findViewById(R.id.passwordText);
 
+        //Requesting Permissions
+        ActivityCompat.requestPermissions(Login.this,
+                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                1);
+        ActivityCompat.requestPermissions(Login.this,
+                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                2);
+
         loginB = (Button)findViewById(R.id.login);
         loginB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startHome = new Intent(Login.this, Homescreen.class);
-                startActivity(startHome);
+                pDialog = new ProgressDialog(Login.this);
+                pDialog.setMessage("Attempting Login...");
+                pDialog.setIndeterminate(false);
+                pDialog.setCancelable(true);
+                pDialog.show();
+
+                ArrayList<User> savedUsers = new ArrayList<User>();
+                boolean success = false;
+
+                String username = user.getText().toString();
+                String password = pass.getText().toString();
+                //User newUser = new User(username, password);
+
+                //Login Check
+                FileReaderWriter savedData = new FileReaderWriter(getApplicationContext());
+                // savedData.loginCheck("user/", username, password);
+                boolean loginPass = savedData.loginVerify("user/", username, password);
+                // userList.add(newUser);
+                //Cant get it to save as file on phone. I really don't like Android.
+                //saveData(userList);
+
+                if(loginPass)
+                {
+                    success = true;
+                }
+                if(success == true)
+                {
+                    Toast.makeText(Login.this, "Login Successful!", Toast.LENGTH_LONG).show();
+                    finish();
+                    User newUser = new User(username, password);
+
+                    //Send user to Homescreen page.
+                    final Intent sendUser = new Intent(Login.this, Homescreen.class);
+                    sendUser.putExtra("curUser", newUser);
+                    pDialog.dismiss();
+                    startActivity(sendUser);
+                }
+                else
+                {
+                    Toast.makeText(Login.this, "Login FAILURE", Toast.LENGTH_LONG).show();
+                    pDialog.dismiss();
+                }
+                //Send user to Settings page
+                //   Intent sendUserToSettings = new Intent(Login.this, SettingsActivity.class);
+                // sendUserToSettings.putExtra("curUser", newUser);
             }
         });
 
@@ -52,83 +103,6 @@ public class Login extends Activity implements View.OnClickListener
                 startActivity(startReg);
             }
         });
-
-        //Requesting Permissions
-        ActivityCompat.requestPermissions(Login.this,
-                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                1);
-        ActivityCompat.requestPermissions(Login.this,
-                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                2);
-    }
-
-    public void onClick(View v)
-    {
-        switch (v.getId()){
-            case R.id.login:
-                new AttemptLogin().execute();
-            case R.id.register:
-                //new AttemptReg().execute();
-            default:
-                break;
-        }
-    }
-
-    class AttemptLogin extends AsyncTask<String, String, String>
-    {
-        @Override
-        protected void onPreExecute(){
-            super.onPreExecute();
-            pDialog = new ProgressDialog(Login.this);
-            pDialog.setMessage("Attempting Login...");
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(true);
-            pDialog.show();
-        }
-        protected void onPostExecute(String message)
-        {
-            pDialog.dismiss();
-        }
-
-        @Override
-        protected String doInBackground(String... args)
-        {
-            ArrayList<User> savedUsers = new ArrayList<User>();
-            //Check for success tag.
-            boolean success = false;
-            String username = user.getText().toString();
-            String password = pass.getText().toString();
-            User newUser = new User(username, password);
-            userList.add(newUser);
-
-            //Cant get it to save as file on phone. I really don't like Android.
-            //saveData(userList);
-
-            if(userList.contains(newUser))
-            {
-                success = true;
-            }
-            if(success == true)
-            {
-                Toast.makeText(Login.this, "Successful Registration!",
-                        Toast.LENGTH_LONG).show();
-                finish();
-            }
-            else
-            {
-                Toast.makeText(Login.this, "REGISTRATION FAILURE",
-                        Toast.LENGTH_LONG).show();
-            }
-            //Send user to Homescreen page.
-            Intent sendUser = new Intent(Login.this, Homescreen.class);
-            sendUser.putExtra("curUser", newUser);
-
-            //Send user to Settings page
-            Intent sendUserToSettings = new Intent(Login.this, SettingsActivity.class);
-            sendUserToSettings.putExtra("curUser", newUser);
-
-            return "Done!";
-        }
     }
 
     //Requesting Permission Method

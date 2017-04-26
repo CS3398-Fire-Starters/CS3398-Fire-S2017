@@ -72,14 +72,15 @@ public class Homescreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
-        otherFunctions_launcher();
-        SettingsLauncher();
-        addWorkout_launcher();
-        progress_launcher();
 
         //Receives the user object from Signup or Login.
         Intent getUser = getIntent();
         User curUser = (User)getUser.getSerializableExtra("curUser");
+
+        otherFunctions_launcher();
+        SettingsLauncher();
+        addWorkout_launcher();
+        progress_launcher();
 
         // Code to open any functions activity when a button is clicked
         listViewHome = (ListView) findViewById(R.id.listView);

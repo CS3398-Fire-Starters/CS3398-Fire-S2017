@@ -23,20 +23,18 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        //Receives the user object from Signup or Login.
+        Intent getUser = getIntent();
+        User curUser = (User)getUser.getSerializableExtra("curUser");
+
         feet = (EditText) findViewById(R.id.Edit_Feet);
         inches = (EditText) findViewById(R.id.Edit_inches);
         weight = (EditText) findViewById(R.id.weight);
         ShowUser = (TextView) findViewById(R.id.Show_User);
         ShowPassword = (TextView) findViewById(R.id.Show_Password);
-
-
-
-
     }
 
     public void UpdateSettings(View v) {
-        Intent getUser = getIntent();
-        User curUser = (User)getUser.getSerializableExtra("curUser");
         /*
         ShowUser.setText(curUser.getUsername().toString());
         ShowPassword.setText(curUser.getPassword.().toString());
