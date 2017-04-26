@@ -1,5 +1,7 @@
 package com.example.derek.workouttracker20;
 
+import android.widget.Toast;
+
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
@@ -61,6 +63,10 @@ public class User implements Serializable{
     public float getWeight() { return this.weight; }
 
     public float getHeight() { return this.height; }
+
+    public ArrayList<WeightRecord> getWeights() {return this.weights; }
+
+    public ArrayList<JogRecord> getJogs() { return this.jogs; }
 
     public float getBMI() { return this.BMI; }
 
