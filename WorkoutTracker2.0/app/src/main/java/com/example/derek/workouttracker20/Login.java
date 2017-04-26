@@ -122,6 +122,11 @@ public class Login extends Activity implements View.OnClickListener
             //Send user to Homescreen page.
             Intent sendUser = new Intent(Login.this, Homescreen.class);
             sendUser.putExtra("curUser", newUser);
+
+            //Send user to Settings page
+            Intent sendUserToSettings = new Intent(Login.this, SettingsActivity.class);
+            sendUserToSettings.putExtra("curUser", newUser);
+
             return "Done!";
         }
     }
