@@ -13,17 +13,6 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <TextView
-            android:id="@+id/HeightLabel"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Height"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="160dp"
-            tools:layout_editor_absoluteY="99dp" />
-
         <EditText
             android:id="@+id/Edit_Feet"
             android:layout_width="match_parent"
@@ -47,26 +36,6 @@
             tools:layout_editor_absoluteX="75dp"
             tools:layout_editor_absoluteY="184dp" />
 
-        <EditText
-            android:id="@+id/Edit_Weight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Edit your Weight in pounds"
-            tools:layout_editor_absoluteX="73dp"
-            tools:layout_editor_absoluteY="334dp" />
-
-        <Button
-            android:id="@+id/SaveSettingsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="UpdateSettings"
-            android:text="Update"
-            tools:layout_editor_absoluteX="147dp"
-            tools:layout_editor_absoluteY="386dp" />
     </LinearLayout>
 
     <TextView
@@ -75,5 +44,37 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="230dp" />
+
+    <Button
+        android:id="@+id/SaveSettingsButton"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="UpdateSettings"
+        android:text="Update"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <EditText
+        android:id="@+id/Edit_Weight"
+        android:layout_width="374dp"
+        android:layout_height="38dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Edit your Weight in pounds"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="237dp" />
+
+    <TextView
+        android:id="@+id/HeightLabel"
+        android:layout_width="368dp"
+        android:layout_height="31dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Height"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="135dp" />
 
 </android.support.constraint.ConstraintLayout>
